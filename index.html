@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taniti</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <script src="script.js" defer></script>
     <header>
         <h1 id="header-splash">Taniti</h1>
         <nav class="header-nav">
-            <ul>
+            <ul id="header-nav-bar-links">
                 <li class="header-links">Home</li>
                 <li class="header-links">Attractions</li>
                 <li class="header-links">Food</li>
@@ -19,13 +23,27 @@
                 <li class="header-links">Transportation</li>
                 <li class="header-links">FAQ</li>
             </ul>
+            <div id="search-wrapper" style="display: none;">
+                <form action="" class="search-bar">
+                    <button type="submit" class="expanded-search">
+                        <i class="fas fa-search ls"></i>
+                    </button>
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" class="expanded-search">
+                        <i class="fas fa-close ls"></i>
+                    </button>
+                </form>
+            </div>
         </nav>
-        <div class="search-container">
-            <form action="" class="search-bar">
-                <input type="text" placeholder="Search..." name="q">
-                <button type="submit"><img src="./images/search_img.png"></button>
-            </form>
+        <div class="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
+        <button type="submit" class="search">
+            <i class="fas fa-search rs"></i>
+            <i class="fas fa-close rs" style="display: none"></i>
+        </button>
     </header>
 
 </body>

@@ -1,25 +1,58 @@
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    max-height: 65px;
 }
 
 .header-links {
-    display: block;
+    display: inline-block;
+    position: relative;
     text-align: center;
     text-decoration: none;
-    float: left;
     padding: 16px;
+    font-size: 17px;
+}
+
+ul{
+    display: flex;
+    gap: 20px;
+}
+
+.header-links::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(94, 94, 94);
+    transform-origin: center;
+    transition: transform 0.35s ease-out;
+}
+
+.header-links:hover::after {
+    transform: scaleX(1);
+    transform-origin: center;
 }
 
 #header-splash {
     display: flex;
-    border: 1px solid black;
+    letter-spacing: -1.5px;
 }
 
 body {
     display: flex;
     flex-direction: column;
     border: 2px solid red;
+    margin: auto;
+    padding: 0px;
+    background-color: #f0f3f6;
+    font-family: "Sansita", sans-serif;
 }
 
 footer {
@@ -28,45 +61,53 @@ footer {
 
 .header-nav {
     display: flex;
-    border: 3px solid green;
+    justify-content: center;
+    align-items: center;
     flex: 1;
-}
-
-#search-icon img {
-    height: 15px;
-    width: 15px;
-}
-
-#search-icon {
-    height: 25px;
-    width: 25px;
-    padding: 5px;
-}
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/*
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.search-bar {
     width: 100%;
     max-width: 700px;
     height: 100%;
     max-height: 25px;
-    background-color: rgb(208, 208, 208);
+}
+
+.search-icon img {
+    height: 15px;
+    width: 15px;
+}
+
+.search-icon {
+    height: 25px;
+    width: 25px;
+    padding: 3px;
+}
+
+
+#search-wrapper {
     display: flex;
-    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+}
+
+.header-nav-bar-links {
+    display: flex;
+    margin: auto;
+    transition: all 0.4s;
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    height: 25px;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 10px;
     padding: 10px 15px;
+}
+
+.search-bar:hover {
+    border: 1px solid rgb(82, 82, 82);
 }
 
 .search-bar input {
@@ -74,47 +115,68 @@ footer {
     flex: 1;
     border: 0;
     outline: none;
-    color: rgb(0, 33, 104);
-}
-
-.search-bar input:focus{
-    background-color: red;
+    font-family: "Sansita", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 ::placeholder {
-    color: rgb(0, 33, 104);
     font-size: 15px;
+    opacity: 75%;
 }
 
-.search-bar button img{
-    height: 20px;
-    width: 20px;
-}
-
-.search-bar button img:hover{
-    -webkit-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    transform: scale(1.15);
-    transition: 1s ease-in;
-}
-
-.search-bar button {
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    margin-right: 5px;
-    background-color: rgb(208, 208, 208);
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
     border: none;
 }
 
-#search-icon{
-    height: 25px;
-    width: 25px;
+.fa-search.rs,
+.fa-close.rs {
+    margin: auto;
+    scale: 175%;
 }
 
-#search-icon img {
-    width: 20px;
-    height: 20px;
+.fa-search.ls,
+.fa-close.ls {
+    opacity: 50%;
 }
 
-*/
+.fa-search.ls:hover,
+.fa-close.ls:hover {
+    opacity: 100%;
+}
+
+.expanded-search{
+    border: none;
+}
+
+.fa-search.rs:hover,
+.fa-close.rs:hover {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    25%{transform: scale(0.85);}
+    50%{transform: scale(1.0);}
+    75%{transform: scale(0.85);}
+    100%{transform: scale(1.0);}
+}
+
+.burger-menu {
+
+}
+
+.bar {
+
+}
+
+
+@media (max-width: 500px) {
+    .search-bar {
+        min-width: 100px; /* Allows more flexibility on smaller devices */
+    }
+}
