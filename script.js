@@ -2,7 +2,7 @@
 const search = document.querySelector(".search");
 search.addEventListener("click", () => {
     navToggleFromRightSearch();
-    showButtonsInToggledLeftSearchBar();
+    showButtonsInLeftSearchBar();
 })
 
 // Enables closing animation from middle search bars exit button
@@ -10,9 +10,8 @@ const inner_close = document.querySelector('button[type="close-search"]');
 inner_close.addEventListener("click", () => {
     event.preventDefault();
     navToggleFromRightSearch();
-    showButtonsInToggledLeftSearchBar();
+    showButtonsInLeftSearchBar();
 })
-
 function navToggleFromRightSearch(){
     const search_bar_wrapper = document.querySelector("#search-wrapper");
     const nav_bar_links = document.querySelector("#header-nav-bar-links");
@@ -43,8 +42,7 @@ function navToggleFromRightSearch(){
         nav_bar_links.classList.remove("fade-in");
     }
 }
-
-function showButtonsInToggledLeftSearchBar(){
+function showButtonsInLeftSearchBar(){
     const search_icon = document.querySelector(".fa-search.rs");
     const close_icon = document.querySelector(".fa-close.rs");
 
@@ -64,5 +62,16 @@ search_bar_input.addEventListener("focus", () => {
 search_bar_input.addEventListener("blur", () => {
     search_bar.classList.remove("focused");
 });
+
+
+const burger_menu = document.querySelector('button[type="burger-button"]')
+search.addEventListener("click", () => {
+    openHamburgerMenu();
+})
+
+function openHamburgerMenu(){
+    const burger_wrapper = document.querySelector(".document-wrapper");
+    burger_wrapper.style.width = "250px";
+}
 
 // Idea for mobile compat : when hamburger present --> hide 'Taniti' h1 when searching
