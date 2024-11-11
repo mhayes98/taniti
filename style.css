@@ -48,7 +48,7 @@ ul{
 body {
     display: flex;
     flex-direction: column;
-    border: 2px solid red;
+
     margin: auto;
     padding: 0px;
     background-color: #f0f3f6;
@@ -96,7 +96,7 @@ footer {
 @keyframes slide-left {
     0% {opacity: 0; transform: translateX(100%);}
     50% {opacity: 50%;}
-    100%{transform: translateX(0%)}
+    100% {transform: translateX(0%)}
 }
 
 #search-wrapper.hide-animation{
@@ -105,24 +105,33 @@ footer {
 }
 
 @keyframes slide-right {
-    0%{transform: translateX(0%)}
+    0% {transform: translateX(0%)}
     50% {opacity: 50%;}
     100% {opacity: 0; transform: translateX(100%);}
 }
 
-.header-nav-bar-links {
+#header-nav-bar-links {
     display: flex;
-    margin: auto;
-    transition: all 0.4s;
 }
 
-.header-nav-bar-links.fade-in {
-    animation: fade-in 5.3s;
+.fade-in {
+    animation: fade-in 0.225s;
 }
 
 @keyframes fade-in {
-    50% {opacity: 0%;}
+    0% {opacity: 0%;}
+    25% {opacity: 25%}
+    50% {opacity: 50%;}
+    75% {opacity: 75%;}
     100% {opacity: 100%;}
+}
+
+@keyframes fade-out {
+    0% {opacity: 100%;}
+    25% {opacity: 75%}
+    50% {opacity: 50%;}
+    75% {opacity: 25%;}
+    100% {opacity: 0%;}
 }
 
 .search-bar {
@@ -140,14 +149,18 @@ footer {
     border: 1px solid rgb(82, 82, 82);
 }
 
-.search-bar input {
+#search-bar-input {
     background: transparent;
     flex: 1;
-    border: 0;
     outline: none;
+    border: none;
     font-family: "Sansita", sans-serif;
     font-weight: 600;
     font-size: 16px;
+}
+
+.search-bar.focused {
+    border: 1px solid rgb(82, 82, 82);
 }
 
 ::placeholder {

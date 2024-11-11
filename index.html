@@ -25,11 +25,11 @@
             </ul>
             <div id="search-wrapper" style="display: none;">
                 <form action="" class="search-bar">
-                    <button type="submit" class="expanded-search">
+                    <button type="button" class="expanded-search">
                         <i class="fas fa-search ls"></i>
                     </button>
-                    <input type="text" placeholder="Search...">
-                    <button type="submit" class="expanded-search">
+                    <input type="text" id="search-bar-input" placeholder="Search...">
+                    <button type="close-search" class="expanded-search">
                         <i class="fas fa-close ls"></i>
                     </button>
                 </form>
@@ -40,7 +40,7 @@
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-        <button type="submit" class="search">
+        <button type="toggle-search" class="search">
             <i class="fas fa-search rs"></i>
             <i class="fas fa-close rs" style="display: none"></i>
         </button>
