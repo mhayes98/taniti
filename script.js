@@ -1,8 +1,32 @@
+function toggleHeaderSplash(){
+    const header_splash = document.querySelector("#header-splash");
+    if(window.getComputedStyle(burger_menu).display != "none"){
+        header_splash.textContent = ".";
+        header_splash.style.visibility = "hidden";
+    }
+    else{
+        header_splash.textContent = "Taniti";
+        header_splash.style.visibility = "visible";
+    }
+}
+
+function enableHeaderSplash(){
+    const header_splash = document.querySelector("#header-splash");
+    if(burger_menu.style.display != "none"){
+        setTimeout(() => {
+            header_splash.textContent = "Taniti";
+            header_splash.style.visibility = "visible";
+            
+        }, 250)
+    }
+}
+
 // Toggles middle search bar & adjusts buttons
 const search = document.querySelector(".search");
 search.addEventListener("click", () => {
     navToggleFromRightSearch();
     showButtonsInLeftSearchBar();
+    toggleHeaderSplash();
 })
 
 // Enables closing animation from middle search bars exit button
@@ -15,6 +39,7 @@ inner_close.addEventListener("click", () => {
 function navToggleFromRightSearch(){
     const search_bar_wrapper = document.querySelector("#search-wrapper");
     const nav_bar_links = document.querySelector("#header-nav-bar-links");
+    const burger_menu = document.querySelector(".burger-menu")
 
     // Adds class to toggle slide-in vs slide-out animation
     if(search_bar_wrapper.style.display == "flex"){
@@ -31,7 +56,7 @@ function navToggleFromRightSearch(){
     }
     
     // Adds class to toggle fade-in animation (post slide-out above)
-    if(nav_bar_links.style.display == "none"){
+    if((nav_bar_links.style.display == "none")  && (window.getComputedStyle(burger_menu).display == "none")){
         nav_bar_links.classList.add("fade-in");
         setTimeout(() => {
             nav_bar_links.style.display = "flex";
@@ -64,14 +89,47 @@ search_bar_input.addEventListener("blur", () => {
 });
 
 
-const burger_menu = document.querySelector('button[type="burger-button"]')
-search.addEventListener("click", () => {
-    openHamburgerMenu();
-})
-
-function openHamburgerMenu(){
-    const burger_wrapper = document.querySelector(".document-wrapper");
-    burger_wrapper.style.width = "250px";
+const burger_menu = document.querySelector(".burger-menu")
+burger_menu.addEventListener("click", () => {
+    const burger_wrapper = document.querySelector(".burger-wrapper");
+    const burger_button = document.querySelector(".fa-bars");
+    if(burger_wrapper.style.width == "0px"){
+        expandHamburgerMenu(burger_wrapper);
+}
+    else{
+        closeHamburgerMenu(burger_wrapper);
+    }
+});
+function expandHamburgerMenu(burger_wrapper){
+    burger_wrapper.style.width = "200px";
+    burger_menu.style.zIndex = "1";
+    burger_menu.style.color = "white";
+}
+function closeHamburgerMenu(burger_wrapper){
+    burger_wrapper.style.width = "0px";
+    burger_menu.style.zIndex = "0";
+    burger_menu.style.color = "black";
 }
 
+var max_size = window.matchMedia("(max-width: 1000px)")
+function toggleNavBarByScreenSize(max_size) {
+    const nav_bar_links = document.querySelector("#header-nav-bar-links");
+    if (max_size.matches){
+        nav_bar_links.style.display = "none";
+    }
+    else {
+        nav_bar_links.style.display = "flex";
+    }
+}
+toggleNavBarByScreenSize(max_size);
+max_size.addEventListener("change", function() {
+    toggleNavBarByScreenSize(max_size);
+})
+
+
+
+/*disableHeaderSplash();
+burger_menu.addEventListener("change", () => {
+    disableHeaderSplashWhenSearch();
+})*/
 // Idea for mobile compat : when hamburger present --> hide 'Taniti' h1 when searching
