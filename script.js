@@ -1,5 +1,6 @@
 function toggleHeaderSplash(){
     const header_splash = document.querySelector("#header-splash");
+
     if(window.getComputedStyle(burger_menu).display != "none"){
         header_splash.textContent = ".";
         header_splash.style.visibility = "hidden";
