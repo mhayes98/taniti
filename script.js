@@ -1,42 +1,19 @@
-function toggleHeaderSplash(){
-    const header_splash = document.querySelector("#header-splash");
-
-    if(window.getComputedStyle(burger_menu).display != "none"){
-        header_splash.textContent = ".";
-        header_splash.style.visibility = "hidden";
-    }
-    else{
-        header_splash.textContent = "Taniti";
-        header_splash.style.visibility = "visible";
-    }
-}
-
-function enableHeaderSplash(){
-    const header_splash = document.querySelector("#header-splash");
-    if(burger_menu.style.display != "none"){
-        setTimeout(() => {
-            header_splash.textContent = "Taniti";
-            header_splash.style.visibility = "visible";
-            
-        }, 250)
-    }
-}
-
 // Toggles middle search bar & adjusts buttons
 const search = document.querySelector(".search");
 search.addEventListener("click", () => {
     navToggleFromRightSearch();
     showButtonsInLeftSearchBar();
-    toggleHeaderSplash();
+    enableHeaderSplash();
 })
-
 // Enables closing animation from middle search bars exit button
 const inner_close = document.querySelector('button[type="close-search"]');
 inner_close.addEventListener("click", () => {
     event.preventDefault();
     navToggleFromRightSearch();
     showButtonsInLeftSearchBar();
+    enableHeaderSplash();
 })
+
 function navToggleFromRightSearch(){
     const search_bar_wrapper = document.querySelector("#search-wrapper");
     const nav_bar_links = document.querySelector("#header-nav-bar-links");
@@ -51,6 +28,7 @@ function navToggleFromRightSearch(){
         }, 200);
     }
     else{
+        
         search_bar_wrapper.classList.remove("hide-animation");
         search_bar_wrapper.classList.add("show-animation");
         search_bar_wrapper.style.display = "flex";
@@ -75,8 +53,25 @@ function showButtonsInLeftSearchBar(){
     search_icon.style.display = search_icon.style.display == "none" ? "flex" : "none";
     close_icon.style.display = close_icon.style.display == "none" ? "flex" : "none";
 }
+function enableHeaderSplash(){
+    const header_splash = document.querySelector("#header-splash");
+    if(window.getComputedStyle(burger_menu).display == "flex"){
 
-
+        if(header_splash.textContent == "."){
+            setTimeout(() => {
+                header_splash.textContent = "Taniti";
+                header_splash.style.visibility = "visible";
+            }, 200)
+        }
+        else{
+            header_splash.textContent = ".";
+            header_splash.style.visibility = "hidden";
+        }
+    }
+    else{
+        header_splash.textContent = "Taniti";
+    }
+}
 
 
 // Enable & disable border on search bar focus 
@@ -91,10 +86,9 @@ search_bar_input.addEventListener("blur", () => {
 
 
 const burger_menu = document.querySelector(".burger-menu")
-burger_menu.addEventListener("click", () => {
+burger_menu.addEventListener("click", () => { 
     const burger_wrapper = document.querySelector(".burger-wrapper");
-    const burger_button = document.querySelector(".fa-bars");
-    if(burger_wrapper.style.width == "0px"){
+    if(burger_wrapper.style.width != "200px"){
         expandHamburgerMenu(burger_wrapper);
 }
     else{
