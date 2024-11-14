@@ -6,6 +6,7 @@ header {
     padding: 0px;
     margin: 0px;
     max-height: 65px;
+    background-color: rgb(225, 221, 217);
 }
 
 .header-links {
@@ -15,6 +16,7 @@ header {
     text-decoration: none;
     padding: 16px;
     font-size: 17px;
+    font-weight: bold;
 }
 
 ul{
@@ -55,7 +57,7 @@ body {
     flex-direction: column;
     margin: auto;
     padding: 0px;
-    background-color: #f0f3f6;
+    background-color: rgb(225, 221, 217);
     font-family: "Sansita", sans-serif;
 }
 
@@ -174,6 +176,7 @@ footer {
 .fa-close.rs {
     margin: auto;
     scale: 175%;
+    background-color: rgb(225, 221, 217);
 }
 
 .fa-search.ls,
@@ -221,20 +224,27 @@ footer {
     font-size: 16px;
 }
 
-.burger-wrapper li:hover {
-    color: rgb(145, 145, 145);
-    transition: .3s;
-}
-
 .burger-items{
     text-decoration: none;
     font-size: 15px;
-    color: white;
     display: flex;
     flex-direction: column;
     transition: 0.3s;
     margin: 5px;
     list-style-type: none;
+}
+
+.burger-items a {
+    color: white;
+}
+
+button {
+    background: transparent;
+}
+
+.burger-wrapper a:hover {
+    color: rgb(145, 145, 145);
+    transition: .3s;
 }
 
 .burger-menu{
@@ -261,6 +271,48 @@ footer {
     display: flex;
     gap: 40px;
 }
+
+#main-image-sec {
+    display: flex;
+    background:url(./images/island_wide.jpg) no-repeat center center;
+    background-size: cover;
+    background-position: fixed;
+    height: 600px;
+    justify-content: center;
+}
+
+#main-image-sec h1 {
+    color: white;
+    margin-top: 50px;
+    font-size: 45px;
+    text-align: center;
+    text-shadow: -4px 0 black, 0 3px black, 1px 0 black, 0 2px black;
+    letter-spacing: 2px;
+}
+
+#about-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    margin: -20px;
+    background-color: rgb(225, 221, 217);
+}
+
+#about-sec p {
+    display: flex;
+    max-width: 700px;
+    letter-spacing: 0.5px;
+}
+
+#about-sec h1 {
+    display: flex;
+    padding: 60px;
+    align-self: center;
+    font-size: 50px;
+}
+
 
 @media (max-width: 1000px) {
     .search-bar {
