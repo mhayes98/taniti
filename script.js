@@ -55,8 +55,7 @@ function showButtonsInLeftSearchBar(){
 }
 function enableHeaderSplash(){
     const header_splash = document.querySelector("#header-splash");
-    if(window.getComputedStyle(burger_menu).display == "flex"){
-
+    if((window.getComputedStyle(burger_menu).display == "flex") && (window.innerWidth < 600)){
         if(header_splash.textContent == "."){
             setTimeout(() => {
                 header_splash.textContent = "Taniti";
