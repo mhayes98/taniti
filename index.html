@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </head>
 <body>
     <script src="script.js" defer></script>
@@ -57,9 +60,10 @@
             </button>
         </div>
     </header>
-    <section>
+    <section id="index-s1">
         <div id="main-image-sec">
             <h1><i>Welcome to<br><br>The Island of Taniti</i></h1>
+            <a href="#contact-form"><button id="contact-button">Book Now</button></a>
         </div>
         <div id="about-sec">
             <h1>About <br> the Island</h1>
@@ -74,9 +78,72 @@
             </p>
         </div>
     </section>
-    <section>
+    <section id="index-s2">
+        <h1>Book your dream vacation now!</h1>
+        <form>
+            <div id="contact-form">
+                <div id="label-wrapper">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name"><br>
 
+                    <label for="email">E-Mail:</label>
+                    <input type="text" id="email" name="email"><br>
+
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="text" id="phone-number" name="phone-number"><br>
+                
+                    <label for="adults">Number of Adults:</label>
+                    <select name="adults" id="adults">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10+</option>
+                    </select><br>
+                    <label for="children">Number of Children:</label>
+                    <select name="children" id="children">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10+</option>
+                    </select><br>
+                    <label for="message">Additional Comments:</label>
+                    <textarea id="message" name="message" rows="3"></textarea><br>
+                </div>
+
+                <div id="label-wrapper-cal">            
+                    <label for="date-range">Length of Stay:</label>
+                    <input id="date-range" placeholder="Length of stay...">
+                    <script>
+                        flatpickr("#date-range", {
+                            mode: "range",
+                                dateFormat: "Y-m-d",
+                                inline: true
+                            });
+                        </script>
+                </div>
+        </div>
+            <div id="button-wrapper">
+                <button type="submit" id="submit-contact-form">SUBMIT</button>
+
+                <p><i>* A travel agent will reach out within 5-business days of submission.</i></p>
+            </div>
+        </form>
     </section>
+    <footer>
 
+    </footer>
 </body>
 </html>
