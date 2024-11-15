@@ -471,14 +471,31 @@ label {
 }
 
 footer {
+    display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 25px;
     margin-bottom: 15px;
+    padding: 0 75px;
 }
 
 footer img {
     height: 125px;
     width: 125px;
+    display: flex;
+}
+
+#social-media-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+#social-media-icons {
+    align-self: center;
+    scale: 150%;
+    padding: 5px;
 }
 
 @media (max-width: 1000px) {
