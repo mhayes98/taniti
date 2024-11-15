@@ -284,7 +284,8 @@ button {
     align-items: center;
 }
 
-#main-image-sec h1 {
+#main-image-sec h1,
+#attraction-s1-img h1 {
     color: white;
     margin-top: 35px;
     font-size: 45px;
@@ -496,6 +497,17 @@ footer img {
     align-self: center;
     scale: 150%;
     padding: 5px;
+}
+
+#attraction-s1-img {
+    display: flex;
+    flex-direction: column;
+    background:url(./images/attractions.jpg) no-repeat center center;
+    background-size: cover;
+    background-position: fixed;
+    height: 625px;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 @media (max-width: 1000px) {
