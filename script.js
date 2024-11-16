@@ -121,9 +121,27 @@ max_size.addEventListener("change", function() {
 })
 
 
+let slide_index = 1;
+navigateSlideShow(slide_index);
 
-/*disableHeaderSplash();
-burger_menu.addEventListener("change", () => {
-    disableHeaderSplashWhenSearch();
-})*/
-// Idea for mobile compat : when hamburger present --> hide 'Taniti' h1 when searching
+function navigateSlideShow(slide_num) {
+    toggleSlideImage(slide_index += slide_num);
+}
+function currentSlide(slide_num){
+    toggleSlideImage(slide_index = slide_num);
+}
+function toggleSlideImage(slide_num){
+    let i;
+    let slides = document.getElementsByClassName("slides");
+    let dots = document.getElementsByClassName("dot");
+    if(slide_num > slides.length) {slide_num = 1}
+    if(slide_num < 1) {slide_num = slides.length}
+    for(i = 0; i < slides.length; i++){
+        slides[i].style.display = "none";
+    }
+    for(i = 0; i < dots.length; i++){
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slide_num-1].style.display = "block";
+    dots[slide_num-1].className += " active";
+}
