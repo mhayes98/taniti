@@ -121,30 +121,42 @@ max_size.addEventListener("change", function() {
 })
 
 
-let slide_index = 1;
-toggleSlideImage(slide_index);
-
-function navigateSlideShow(slide_num) {
-    toggleSlideImage(slide_index += slide_num);
-}
-function currentSlide(slide_num){
-    toggleSlideImage(slide_index = slide_num);
-}
-function toggleSlideImage(slide_num){
-    let i;
-    let slides = document.getElementsByClassName("slides");
-    let dots = document.getElementsByClassName("dot");
-
-
-    if(slide_num > slides.length) {slide_num = 1; slide_index = 1;}
-    if(slide_num < 1) {slide_num = slides.length; slide_index = 5;}
-    for(i = 0; i < slides.length; i++){
-        slides[i].style.display = "none";
+// Slideshow class to allow for each pages slideshow(s) to operate independently
+class Slideshow{
+    constructor(container){
+        this.container = container;
+        this.slides = container.getElementsByClassName("slides");
+        this.dots = container.getElementsByClassName("dots");
+        this.current_slide = 1;
+        this.navigate_slide = navigateSlideShow(currentSlide);
     }
-    for(i = 0; i < dots.length; i++){
-        dots[i].className = dots[i].className.replace(" active", "");
+
+    // Retrieves current slide from HTML
+    setCurrentSlide(slide_num){
+        this.current_slide = slide_num;
+        this.toggleSlideImage(slide_num);
     }
-    slides[slide_num-1].style.display = "block";
-    dots[slide_num-1].className += " active";
-    console.log(slide_index);
+
+    // Progresses slideshow, loops back to the start or end when necessary
+    navigateSlideShow(step) {
+        this.current_slide += step;
+        if(this.current_slide > this.slides.length){current_slide = 1;}
+        if(this.current_slide < 1){this.current_slide = this.slides.length;}
+        this.toggleSlideImage(this.current_slide);
+    }
+
+    // Toggles dot style & image display for all slides per run
+    toggleSlideImage(slide_num){
+        for(i = 0; i < this.slides.length; i++){
+            this.slides[i].style.display = "none";
+        }
+        for(i = 0; i < this.dots.length; i++){
+            this.dots[i].className = this.dots[i].className.replace(" active", "");
+        }
+        this.slides[slide_num -1].style.display = "block";
+        this.dots[slide_num -1].className += " active";
+    }
 }
+
+const slideshows = []
+document.querySelectorAll()
