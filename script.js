@@ -122,7 +122,7 @@ max_size.addEventListener("change", function() {
 
 
 let slide_index = 1;
-navigateSlideShow(slide_index);
+toggleSlideImage(slide_index);
 
 function navigateSlideShow(slide_num) {
     toggleSlideImage(slide_index += slide_num);
@@ -134,8 +134,10 @@ function toggleSlideImage(slide_num){
     let i;
     let slides = document.getElementsByClassName("slides");
     let dots = document.getElementsByClassName("dot");
-    if(slide_num > slides.length) {slide_num = 1}
-    if(slide_num < 1) {slide_num = slides.length}
+
+
+    if(slide_num > slides.length) {slide_num = 1; slide_index = 1;}
+    if(slide_num < 1) {slide_num = slides.length; slide_index = 5;}
     for(i = 0; i < slides.length; i++){
         slides[i].style.display = "none";
     }
@@ -144,4 +146,5 @@ function toggleSlideImage(slide_num){
     }
     slides[slide_num-1].style.display = "block";
     dots[slide_num-1].className += " active";
+    console.log(slide_index);
 }

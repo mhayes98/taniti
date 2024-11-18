@@ -580,6 +580,15 @@ footer img {
     cursor: pointer;
   }
 
+  .slide-fade {
+    animation: slide-fade-in 0.8s;
+  }
+
+  @keyframes slide-fade-in {
+    0%{transform: scale(0.96);}
+    100%{transform: scale(1.0);}
+}
+
 @media (max-width: 1000px) {
     .search-bar {
         min-width: 75px;
