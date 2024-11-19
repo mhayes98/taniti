@@ -121,14 +121,13 @@ max_size.addEventListener("change", function() {
 })
 
 
-// Slideshow class to allow for each pages slideshow(s) to operate independently
 class Slideshow{
     constructor(container){
         this.container = container;
         this.slides = container.getElementsByClassName("slides");
         this.dots = container.getElementsByClassName("dots");
         this.current_slide = 1;
-        this.navigate_slide = navigateSlideShow(currentSlide);
+        this.navigateSlideShow(this.current_slide);
     }
 
     // Retrieves current slide from HTML
@@ -140,23 +139,27 @@ class Slideshow{
     // Progresses slideshow, loops back to the start or end when necessary
     navigateSlideShow(step) {
         this.current_slide += step;
-        if(this.current_slide > this.slides.length){current_slide = 1;}
+        if(this.current_slide > this.slides.length){this.current_slide = 1;}
         if(this.current_slide < 1){this.current_slide = this.slides.length;}
         this.toggleSlideImage(this.current_slide);
     }
 
     // Toggles dot style & image display for all slides per run
     toggleSlideImage(slide_num){
-        for(i = 0; i < this.slides.length; i++){
-            this.slides[i].style.display = "none";
+        for (let slide of this.slides){
+            slide.style.display = 'none';
         }
-        for(i = 0; i < this.dots.length; i++){
-            this.dots[i].className = this.dots[i].className.replace(" active", "");
+        for (let dot of this.dots){
+            dot.className = dot.className.replace(' active', '');
         }
-        this.slides[slide_num -1].style.display = "block";
-        this.dots[slide_num -1].className += " active";
+        this.slides[slide_num - 1].style.display = 'block';
+        if (this.dots.length > 0){
+            this.dots[slide_num - 1].className += ' active';
+        }
     }
 }
 
 const slideshows = []
-document.querySelectorAll()
+document.querySelectorAll(".slideshow").forEach((container) => {
+    slideshows.push(new Slideshow(container));
+});

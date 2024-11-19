@@ -515,7 +515,7 @@ footer img {
     border-color: rgb(216, 167, 236);
 }
 
-#attractions-s2 {
+.secondary-main {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -527,20 +527,20 @@ footer img {
     flex-wrap: wrap;
 }
 
-#attractions-s2 h1 {
+.secondary-main h1 {
     font-size: 50px;
 }
 
-.s2-text {
+.slideshow-text {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-self: center;
-    max-width: 450px;
+    max-width: 450px;s2
 
 }
 
-.s2-slideshow {
+.slideshow {
     display: flex;
     flex-direction: column;
 }
