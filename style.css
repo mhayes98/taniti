@@ -150,7 +150,7 @@ footer {
     flex: 1;
     outline: none;
     border: none;
-    font-family: "Sansita", sans-serif;
+    font-family: "Arial", sans-serif;
     font-weight: 600;
     font-size: 16px;
 }
@@ -525,6 +525,8 @@ footer img {
     border-bottom: 1.5px solid darkgray;
     font-size: 20px;
     flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 35px;
 }
 
 .secondary-main h1 {
@@ -536,8 +538,7 @@ footer img {
     flex-direction: column;
     text-align: center;
     align-self: center;
-    max-width: 450px;s2
-
+    max-width: 450px;
 }
 
 .slideshow {
@@ -550,8 +551,8 @@ footer img {
     width: 525px;
     border-radius: 2%;
     box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.6), 
-                10px -10px 20px rgba(0, 0, 0, 0.6), 
-                0px -5px 10px rgba(0, 0, 0, 0.6);
+                20px -10px 20px rgba(0, 0, 0, 0.6), 
+                0px -5px 20px rgba(0, 0, 0, 0.6);
 }
 
 .dot {
@@ -583,6 +584,8 @@ footer img {
   .slide-fade {
     animation: slide-fade-in 0.8s;
   }
+
+
 
   @keyframes slide-fade-in {
     0%{transform: scale(0.96);}

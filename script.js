@@ -125,13 +125,14 @@ class Slideshow{
     constructor(container){
         this.container = container;
         this.slides = container.getElementsByClassName("slides");
-        this.dots = container.getElementsByClassName("dots");
-        this.current_slide = 1;
+        this.dots = container.getElementsByClassName("dot");
+        this.current_slide = 0;
         this.navigateSlideShow(this.current_slide);
     }
 
     // Retrieves current slide from HTML
     setCurrentSlide(slide_num){
+        slide_num -= 1;
         this.current_slide = slide_num;
         this.toggleSlideImage(slide_num);
     }
@@ -139,22 +140,23 @@ class Slideshow{
     // Progresses slideshow, loops back to the start or end when necessary
     navigateSlideShow(step) {
         this.current_slide += step;
-        if(this.current_slide > this.slides.length){this.current_slide = 1;}
-        if(this.current_slide < 1){this.current_slide = this.slides.length;}
+        let max_length = this.slides.length - 1;
+        if(this.current_slide > max_length){this.current_slide = 0;}
+        if(this.current_slide < 0){this.current_slide = max_length;}
         this.toggleSlideImage(this.current_slide);
     }
 
     // Toggles dot style & image display for all slides per run
     toggleSlideImage(slide_num){
         for (let slide of this.slides){
-            slide.style.display = 'none';
+            slide.style.display = "none";
         }
         for (let dot of this.dots){
-            dot.className = dot.className.replace(' active', '');
+            dot.className = dot.className.replace(" active", "");
         }
-        this.slides[slide_num - 1].style.display = 'block';
+        this.slides[slide_num].style.display = "block";
         if (this.dots.length > 0){
-            this.dots[slide_num - 1].className += ' active';
+            this.dots[slide_num].className += " active";
         }
     }
 }
