@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <script src="script.js" defer></script>
@@ -47,7 +51,6 @@
                 <li class="header-links"><a href="./faq.html">FAQ</a></li>
             </ul>
         </div>
-        <div class="right-side-options">
             <button type="button" class="burger-menu">
                 <i class="fa-solid fa-bars"></i>
             </button>        
@@ -55,8 +58,104 @@
                 <i class="fas fa-search rs"></i>
                 <i class="fas fa-close rs" style="display: none"></i>
             </button>
-        </div>
     </header>
 
+    
+    <section id="food-s1">
+        <div id="food-s1-img">
+            <h1><i>Restaurants <br>&<br> Markets</i></h1>
+            <a href="./index.html#contact-form"><button id="contact-button">Book Now</button></a>
+        </div>
+    </section>
+
+    <section class="secondary-main">
+        <div class="slideshow-text">
+            <h1>Restaurants</h1>
+            <p>
+                Taniti currently has 10 restaurants: five that serve local Tanitian cuisine, three American-style diners, and two Pan-Asian restauarants.
+            </p>
+        </div>
+        <div class="slideshow">
+
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s1/tanitian1.jpg" alt="Volcano">
+            </div>
+            
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s1/tanitian2.jpg" alt="Volcano">
+            </div>
+
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s1/american.jpg" alt="Beach">
+            </div>
+
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s1/asian1.jpg" alt="Beach">
+            </div>
+            
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s1/asian2.jpg" alt="Rainforest">
+            </div>
+            
+            <div style="text-align:center" class="slide-show-icons">
+                <a class="prev" onclick="slideshows[0].navigateSlideShow(-1)">❮</a>
+                <span class="dot" onclick="slideshows[0].setCurrentSlide(1)"></span> 
+                <span class="dot" onclick="slideshows[0].setCurrentSlide(2)"></span> 
+                <span class="dot" onclick="slideshows[0].setCurrentSlide(3)"></span> 
+                <span class="dot" onclick="slideshows[0].setCurrentSlide(4)"></span> 
+                <span class="dot" onclick="slideshows[0].setCurrentSlide(5)"></span> 
+                <a class="next" onclick="slideshows[0].navigateSlideShow(1)">❯</a>
+            </div>
+        </div>
+    </section>
+    <section class="secondary-main">
+        <div class="slideshow">
+
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s2/market1.jpg" alt="Food market">
+            </div>
+            
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s2/market2.jpg" alt="Food market">
+            </div>
+
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s2/market3.jpg" alt="Food market">
+            </div>
+
+            <div class="slides slide-fade">
+                <img src="./images/food_slides/s2/market4.jpg" alt="Food market">
+            </div>
+            
+            
+            <div style="text-align:center" class="slide-show-icons">
+                <a class="prev" onclick="slideshows[1].navigateSlideShow(-1)">❮</a>
+                <span class="dot" onclick="slideshows[1].setCurrentSlide(1)"></span> 
+                <span class="dot" onclick="slideshows[1].setCurrentSlide(2)"></span> 
+                <span class="dot" onclick="slideshows[1].setCurrentSlide(3)"></span> 
+                <span class="dot" onclick="slideshows[1].setCurrentSlide(4)"></span> 
+                <a class="next" onclick="slideshows[1].navigateSlideShow(1)">❯</a>
+            </div>
+        </div>
+            <div class="slideshow-text">
+                <h1>Markets</h1>
+                <p>
+                    Taniti has two supermarkets, two smaller grocery stores, and one convenience store that is open 24 hours a day.
+                </p>
+            </div>
+    </section>
+
+    <footer>
+        <img src="./images/footer_logo.png" alt="Tanitian travel logo">
+        <div id="social-media-wrapper">
+            <h4>Connect with us</h4>
+            <div id="social-media-icons">
+                <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+                <a href="https://x.com/home" class="fa fa-twitter"></a>
+                <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+                <a href="https://www.youtube.com" class="fa fa-youtube"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -304,12 +304,6 @@ button {
     color: white;
 }
 
-#main-image-sec button:hover {
-    color: rgb(235, 192, 72);
-    border: 4px solid rgb(235, 192, 72);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
 #about-sec {
     display: flex;
     align-items: center;
@@ -510,11 +504,6 @@ footer img {
     align-items: center;
 }
 
-#attraction-s1-img button:hover {
-    color: rgb(216, 167, 236);
-    border-color: rgb(216, 167, 236);
-}
-
 .secondary-main {
     display: flex;
     flex-direction: row;
@@ -585,6 +574,45 @@ footer img {
     animation: slide-fade-in 0.8s;
   }
 
+  #food-s1-img {
+    display: flex;
+    flex-direction: column;
+    background:url(./images/food.jpg) no-repeat center center;
+    background-size: cover;
+    background-position: fixed;
+    height: 625px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.slideshow-text ul {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#food-s1-img h1 {
+    color: white;
+    margin-top: 35px;
+    font-size: 45px;
+    text-align: center;
+    text-shadow: -4px 0 black, 0 3px black, 1px 0 black, 0 2px black;
+    letter-spacing: 2px;
+}
+
+#food-s1-img button:hover,
+#main-image-sec button:hover,
+#attraction-s1-img button:hover {
+    animation: pulse 2s infinite;
+}
+
+
+#food-s1-img button,
+#main-image-sec button,
+#attraction-s1-img button {
+    box-shadow: 0 0 10px 0 #000000 inset, 0 0 20px 2px #000000;
+    backdrop-filter: blur(10px);
+}
 
 
   @keyframes slide-fade-in {

@@ -165,3 +165,5 @@ const slideshows = []
 document.querySelectorAll(".slideshow").forEach((container) => {
     slideshows.push(new Slideshow(container));
 });
+
+console.log(slideshows.length);
