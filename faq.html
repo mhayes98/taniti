@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <script src="script.js" defer></script>
@@ -47,7 +51,6 @@
                 <li class="header-links"><a href="./faq.html">FAQ</a></li>
             </ul>
         </div>
-        <div class="right-side-options">
             <button type="button" class="burger-menu">
                 <i class="fa-solid fa-bars"></i>
             </button>        
@@ -55,8 +58,92 @@
                 <i class="fas fa-search rs"></i>
                 <i class="fas fa-close rs" style="display: none"></i>
             </button>
-        </div>
     </header>
 
+    
+    <section id="faq-s1">
+        <div id="faq-s1-img">
+            <h1><i>FAQ</i></h1>
+            <a href="./index.html#contact-form"><button id="contact-button">Book Now</button></a>
+        </div>
+    </section>
+
+    <section id="faq-s">
+        <div id="faq-s-wrapper">
+            <h1>Frequently Asked Questions</h1>
+
+            <h3>Power:</h3>
+            <p>Power outlets are 120 volts (the same as in the United States).</p>
+
+            <h3>Alcohol:</h3>
+            <p>Alcohol is not allowed to be served between the hours of midnight and 9:00 AM.</p>
+            <p>The drinking age on Taniti is 18 and the drinking age is <u>NOT</u> strictly enforced.</p>
+
+            <h3>Health:</h3>
+            <p>There is one hospital and several clinics. The hospital has many multilingual employees.</p>
+
+            <h3>Crime:</h3>
+            <p>Violent crime is very rare on Taniti, but as tourism increases, 
+                there are more reports of pickpocketing and other petty crimes.</p>
+
+            <h3>Holidays:</h3>
+            <p>Taniti enjoys a larger number of national holidays, and many tourist attracts and restaurents will
+                be closed on holidays, so visitors should plan accordingly.</p>
+
+            <h3>Currency:</h3>
+            <p>Taniti uses the U.S. dollar as its currency, but many businesses will also accept euros and yen.
+                Several banks facilitate currency exchange, and many businesses accept major credit cards.
+            </p>
+        </div>
+    </section>
+
+    <section id="learn-more">
+        <h1>Learn More!</h1>
+    
+        <div id="image-wrapper">
+            <!--
+            <figure>
+                <img src="./images/island_wide.jpg" alt="Tanitian sunset" height="300" width="300">
+                <figcaption>Home</figcaption>
+            </figure>
+            <figure>
+                <img src="./images/attractions.jpg" alt="Taniti skyrise" height="300" width="300">
+                <figcaption>Attractions</figcaption>
+            </figure>
+            <figure>
+                <img src="./images/Food.jpg" alt="Chefs cooking" height="300" width="300">
+                <figcaption>Food</figcaption>
+            </figure>
+            <figure>
+                <img src="./images/Lodging.jpg" alt="Hotel hallway" height="300" width="300">
+                <figcaption>Lodging</figcaption>
+            </figure>
+            <figure>
+                <img src="./images/Transportation.jpg" alt="Dock" height="300" width="300">
+                <figcaption>Transportation</figcaption>
+            </figure>
+            -->
+
+            <div class="image-links" style="background:url(./images/island_wide.jpg) no-repeat center center; background-size: cover"><a href="./index.html"><span>Home</span></a></div>
+            <div class="image-links" style="background:url(./images/attractions.jpg) no-repeat center center; background-size: cover"><a href="./attractions.html"><span>Attractions</span></a></div>
+            <div class="image-links" style="background:url(./images/food.jpg) no-repeat center center; background-size: cover"><a href="./food.html"><span>Food</span></a></div>
+            <div class="image-links" style="background:url(./images/lodging.jpg) no-repeat center center; background-size: cover"><a href="./lodging.html"><span>Lodging</span></a></div>
+            <div class="image-links" style="background:url(./images/transportation.jpg) no-repeat center center; background-size: cover"><a href="./transportation.html"><span>Transportation</span></a></div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <img src="./images/footer_logo.png" alt="Tanitian travel logo">
+        <div id="social-media-wrapper">
+            <h4>Connect with us</h4>
+            <div id="social-media-icons">
+                <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+                <a href="https://x.com/home" class="fa fa-twitter"></a>
+                <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+                <a href="https://www.youtube.com" class="fa fa-youtube"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
