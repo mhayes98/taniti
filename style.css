@@ -764,3 +764,19 @@ footer img {
     }
 }
 
+@media (max-width: 650px){
+    #about-sec {
+        flex-direction: column;
+    }
+
+    .image-links {
+        height: 225px;
+        width: 275px;
+    }
+
+    .image-links a {
+        height: 225px;
+        width: 275px;
+    }
+}
+
