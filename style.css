@@ -769,14 +769,9 @@ footer img {
         flex-direction: column;
     }
 
-    .image-links {
-        height: 225px;
-        width: 275px;
-    }
-
-    .image-links a {
-        height: 225px;
-        width: 275px;
+    .slides img {
+        height: 300px;
+        width: 325px;
     }
 }
 
